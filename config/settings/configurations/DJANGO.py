@@ -18,11 +18,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,13 +57,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 DATABASES = {
     'default': ENV_VAR.db()
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
+# Password validators
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -78,38 +78,25 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.8/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
     BASE_DIR('static'),
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # '' if not in os.environ
 EMAIL_HOST = ENV_VAR('EMAIL_HOST', default='')
-
 EMAIL_PORT = 587
-
 EMAIL_USE_TLS = True
-
 # '' if not in os.environ
 EMAIL_HOST_USER = ENV_VAR('EMAIL_HOST_USER', default='')
-
 # '' if not in os.environ
 EMAIL_HOST_PASSWORD = ENV_VAR('EMAIL_HOST_PASSWORD', default='')
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
