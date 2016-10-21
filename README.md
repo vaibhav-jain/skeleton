@@ -58,7 +58,8 @@ You can also save these in your virtualenv's script for auto invocation during v
 1. Seprate settings for development and production environment
 2. Settings based on [django-environ](https://django-environ.readthedocs.org/en/latest/)
 3. Excellent admin interface by [django-grappelli](https://django-grappelli.readthedocs.org/en/latest/index.html)
-
+4. Static file serving with [whitenoise](https://github.com/evansd/whitenoise)
+5. Extra commands by [django-extensions](https://github.com/django-extensions/django-extensions)
 
 ### Help ###
 1. Use this to generate [SECRET_KEY](http://www.miniwebtool.com/django-secret-key-generator/)
