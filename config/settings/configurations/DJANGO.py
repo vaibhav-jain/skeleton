@@ -61,6 +61,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': ENV_VAR.db()
 }
+DATABASES['default']['CONN_MAX_AGE'] = 500
 
 # Password validators
 AUTH_PASSWORD_VALIDATORS = [
