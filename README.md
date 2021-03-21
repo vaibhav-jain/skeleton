@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/vaibhav-jain/skeleton.svg?branch=master)](https://travis-ci.com/vaibhav-jain/skeleton)
 
 # skeleton
 A simple Django starter template
