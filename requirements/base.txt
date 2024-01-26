@@ -1,7 +1,7 @@
 beautifulsoup4==4.12.2
-Django==4.1.10
+Django==4.2.6
 django-environ==0.10.0
-django-extensions==3.2.1
+django-extensions==3.2.3
 django-grappelli==3.0.5
 psycopg2==2.9.5
-whitenoise==6.4.0
+whitenoise==6.6.0
